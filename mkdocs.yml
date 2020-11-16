@@ -20,3 +20,4 @@ nav:
         - 'Settings': 'repository/settings.md'
     - 'Filter':
         - 'About': 'filter/about.md'
+        - 'Settings': 'filter/settings.md'
