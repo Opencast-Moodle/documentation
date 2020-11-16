@@ -17,5 +17,6 @@ nav:
         - 'About': 'chunkupload/about.md'
     - 'Repository':
         - 'About': 'repository/about.md'
+        - 'Settings': 'repository/settings.md'
     - 'Filter':
         - 'About': 'filter/about.md'
