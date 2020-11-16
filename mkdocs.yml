@@ -1,0 +1,15 @@
+site_name: Opencast Moodle plugins documentation
+theme:
+    name: readthedocs
+nav:
+    - Home: 'index.md'
+    - 'Tool':
+        - 'About': 'tool/about.md'
+    - 'Block':
+        - 'About': 'block/about.md'
+    - 'Chunkupload':
+        - 'About': 'chunkupload/about.md'
+    - 'Repository':
+        - 'About': 'repository/about.md'
+    - 'Filter':
+        - 'About': 'filter/about.md'
