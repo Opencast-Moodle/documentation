@@ -11,3 +11,5 @@ Currently there are five Opencast Moodle plugins. These are:
 * **[Chunk Upload](chunkupload/about.md):** This plugins provides the possibility of using a chunked upload in the block.
 * **[Repository](repository/about.md):** This plugin provides a repository for accessing uploaded videos.
 * **[Filter](filter/about.md):** This plugin provides a filter that replaces links to Opencast with a player.
+
+![Relationship](img/relationship.png)
