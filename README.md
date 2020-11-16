@@ -11,6 +11,10 @@ For the communication within the community there are two mediums:
 
 ## Meetings
 
-The meetings take place every second month on the first wednesday of the month. The meeting is at 3pm (in Germany) in [Big Blue Button](https://opencast.blindsidenetworks.net/) (password: welcome). 
+The meetings take place every second month on the first wednesday of the month. The meeting is at 3pm (in Germany) in [Big Blue Button](https://opencast.blindsidenetworks.net/) (password: welcome).
 
 The minutes are in the [wiki](https://github.com/Opencast-Moodle/documentation/wiki/Meeting-minutes).
+
+## Documentation
+
+The documentation has been build using `mkdocs` and for the theme `mkdocs-windmill` needs to be installed.

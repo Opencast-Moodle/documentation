@@ -1,6 +1,18 @@
 site_name: Opencast Moodle plugins documentation
-theme:
-    name: readthedocs
+repo_url: https://github.com/Opencast-Moodle/documentation
+# Default theme used is windmill
+theme: windmill
+
+# The directory that contain the source .md files
+docs_dir: 'docs'
+
+# The directory to which the site is built using mkdocs
+site_dir: 'site'
+
+# The css files in this list will override existing css from the default theme
+extra_css:
+   - css/extra.css
+# Navigation
 nav:
     - Home: 'index.md'
     - 'Tool':
