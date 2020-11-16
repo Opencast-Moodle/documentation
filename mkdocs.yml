@@ -5,6 +5,7 @@ nav:
     - Home: 'index.md'
     - 'Tool':
         - 'About': 'tool/about.md'
+        - 'Settings': 'tool/settings.md'
     - 'Block':
         - 'About': 'block/about.md'
     - 'Chunkupload':
