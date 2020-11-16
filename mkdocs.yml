@@ -1,0 +1,23 @@
+site_name: Opencast Moodle plugins documentation
+theme:
+    name: readthedocs
+nav:
+    - Home: 'index.md'
+    - 'Tool':
+        - 'About': 'tool/about.md'
+        - 'Settings': 'tool/settings.md'
+    - 'Block':
+        - 'About': 'block/about.md'
+        - 'Settings':
+          - 'General Settings': 'block/general_settings.md'
+          - 'Appearance': 'block/appearance.md'
+          - 'Additional features': 'block/additional_features.md'
+          - 'Backup and restore workflows': 'block/backup_restore_workflows.md'
+    - 'Chunkupload':
+        - 'About': 'chunkupload/about.md'
+    - 'Repository':
+        - 'About': 'repository/about.md'
+        - 'Settings': 'repository/settings.md'
+    - 'Filter':
+        - 'About': 'filter/about.md'
+        - 'Settings': 'filter/settings.md'
