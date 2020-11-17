@@ -18,3 +18,5 @@ The minutes are in the [wiki](https://github.com/Opencast-Moodle/documentation/w
 ## Documentation
 
 The documentation has been build using `mkdocs` and for the theme `mkdocs-windmill` needs to be installed.
+
+This is done automatically and served at: [https://moodle.docs.opencast.org/](https://moodle.docs.opencast.org/). The build is run daily.
