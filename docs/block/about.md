@@ -2,7 +2,7 @@
 
 This block can be used to link Moodle courses to Opencast series. Users with respective privileges (in the following called instructors) can use this block to upload videos via Moodle to Opencast. These videos are transmitted to the Opencast system by the cronjob and create an event in the respective series there.
 
- The block can be used to automatically set the access privileges of moodle users enrolled in the course. All events belonging to the series are displayed in the block. This way, the instructors get an overview of all recorded lectures as well as planned ones. Further, if setup correctly, the instructors are able to restrict the visibility to moodle groups or prevent access by students at all.
+ The block can be used to automatically set the access privileges of Moodle users enrolled in the course. All events belonging to the series are displayed in the block. This way, the instructors get an overview of all recorded lectures as well as planned ones. Further, if setup correctly, the instructors are able to restrict the visibility to Moodle groups or prevent access by students at all.
 
 ## Installation
 
@@ -12,10 +12,10 @@ The Opencast block plugin is available from [GitHub](https://github.com/Opencast
 
 * Min. Moodle Version: 3.3
 * Opencast API level:
-   * Minimum: v1.0.0
-   * Recommended: v1.1.0
-    * Some features might do not works as expected, when using an older API level.
-* Installed Opencast api tool.
+    + Minimum: v1.0.0
+    + Recommended: v1.1.0
+        - Some features might do not works as expected, when using an older API level.
+* Installed Opencast API tool.
 
 ## Configuration
 
@@ -31,7 +31,7 @@ There are additional capabilities, with which you can control the access to the 
 
 | Capability                           | Role in default configuration | Description                                                                                          |
 |--------------------------------------|-------------------------------|------------------------------------------------------------------------------------------------------|
-| block/opencast:addvideo              | editingteacher, manager       | Add a video via moodle to opencast.                                                                   |
+| block/opencast:addvideo              | editingteacher, manager       | Add a video via Moodle to opencast.                                                                   |
 | block/opencast:viewunpublishedvideos | editingteacher, manager       | View the list of all videos of the course, which are available in opencast (even not published ones) |
 | block/opencast:defineseriesforcourse | manager       | Change the series ID which is associated with the block instance or rather course |
 | block/opencast:createseriesforcourse | manager       | Create a new series if block/course is not yet associated with one |
