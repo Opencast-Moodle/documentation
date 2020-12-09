@@ -1,19 +1,19 @@
-# Configuration of the duplicate workflow
-To use the backup and restore functionality, you need to specify a duplication workflow within the moodle settings. However, there is no out of the box workflow defined in Opencast, which allows to duplicate a series.
+# Configuration of the Duplicate Workflow
+To use the backup and restore functionality, you need to specify a duplication workflow within the Moodle settings. However, there is no out of the box workflow defined in Opencast, which allows to duplicate a series.
 
 ## Own workflows
 
 If you want to create your own workflow, here are the descriptions of the general restore process:
 
-In the restore process, we first create a new opencast series for the new course. Afterwards, for each event id of the
-backup a 'duplicate' workflow is started, while the new series id is given as a configuration parameter to the start workflow call. The variable used to store the series ID is 'seriesID'.
+In the restore process, we first create a new opencast series for the new course. Afterwards, for each event UID of the
+backup a 'duplicate' workflow is started, while the new series UID is given as a configuration parameter to the start workflow call. The variable used to store the series ID is 'seriesID'.
 In our workflow definition example from above, the first workflow lms-automated-duplicate will duplicate the event and will start a new workflow for the new event. This second workflow lms-publish-duplicate then assigns the series of the new course to the new event.
 
-In order to be able to select your duplicate workflow within moodle, you need to assign the 'api' tag to it, since the viable duplicate workflows are filtered by that.
+In order to be able to select your duplicate workflow within Moodle, you need to assign the 'api' tag to it, since the viable duplicate workflows are filtered by that.
 
 ## Workflow examples
 
-The workflow that is triggerd by Moodle:
+The workflow that is triggered by Moodle:
 
 ```
 <?xml version="1.0" encoding="UTF-8" ?>

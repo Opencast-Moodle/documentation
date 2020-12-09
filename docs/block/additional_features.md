@@ -1,4 +1,4 @@
-# Additional features
+# Additional Features
 
 In the additional features you can configure the access to Opencast Studio as well as for LTI activities.
 
@@ -11,7 +11,7 @@ If you also have the chunkuploader installed you configure it in this section.
 
 ## Opencast studio
 
-In this section you can enable the feature to add [Opencast Studio](https://docs.opencast.org/develop/admin/#modules/studio/) support to the block. For this to work Opencast Studio needs to be running on the admin node and [LTI](https://docs.opencast.org/develop/admin/#modules/ltimodule/) needs to be enabled. Furthermore LTI users need to be allowed to access Opencast Studio, for this they need the additonal role ´ROLE_STUDIO´. The options are:
+In this section you can enable the feature to add [Opencast Studio](https://docs.opencast.org/develop/admin/#modules/studio/) support to the block. For this to work Opencast Studio needs to be running on the admin node and [LTI](https://docs.opencast.org/develop/admin/#modules/ltimodule/) needs to be enabled. Furthermore LTI users need to be allowed to access Opencast Studio, for this they need the additional role ´ROLE_STUDIO´. The options are:
 
 * **Show the link to opencast studio:** This option renders a button to opencast studio in the block content and the block overview. Opencast studio has to run on your opencast admin node and the following LTI settings have to be configured as well. Defaults to no.
 * **Consumer key:** LTI Consumer key for the opencast studio integration.
@@ -35,7 +35,7 @@ To be able to use this feature, you have to create a preconfigured LTI tool for 
 For the preconfigured LTI tool the following settings need to be set:
 
 * **Tool name:** The name of the preconfigured LTI tool. For example: Opencast Series
-* **Tool URL:** The URL of the Opencast presentation server follwed by `/lti`. For example: `https://develop.opencast.org/lti`
+* **Tool URL:** The URL of the Opencast presentation server followed by `/lti`. For example: `https://develop.opencast.org/lti`
 * **Consumer key:** The LTI consumer key.
 * **Shared secret:** The LTI shared secret.
 * **Custom parameters:** `tool=ltitools/series/index.html`
@@ -57,7 +57,7 @@ To be able to use this feature, you have to create a preconfigured LTI tool for 
 For the preconfigured LTI tool the following settings need to be set:
 
 * **Tool name:** The name of the preconfigured LTI tool. For example: Opencast Episodes
-* **Tool URL:** The URL of the Opencast presentation server follwed by `/lti`. For example: `https://develop.opencast.org/lti`
+* **Tool URL:** The URL of the Opencast presentation server followed by `/lti`. For example: `https://develop.opencast.org/lti`
 * **Consumer key:** The LTI consumer key.
 * **Shared secret:** The LTI shared secret.
 * **Custom parameters:** `tool=paella/ui/watch.html` or `tool=theodul/ui/core.html`
