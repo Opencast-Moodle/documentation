@@ -10,7 +10,7 @@ The Opencast repository plugin is available from [GitHub](https://github.com/Ope
 
 ## Requirements
 
-* Installed Opencast api tool.
+* Installed Opencast API tool.
 
 ## Configuration
 

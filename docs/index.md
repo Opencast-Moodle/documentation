@@ -1,4 +1,4 @@
-# Opencast Moodle plugins guide
+# Opencast Moodle Plugins Guide
 
 Welcome to the documentation of the Opencast Moodle plugins.
 
