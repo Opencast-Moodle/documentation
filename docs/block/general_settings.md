@@ -1,9 +1,6 @@
 # General Settings
 
-In the following, we outline the settings for the block.
-Through the settings, the block can be adjusted to the needs of your platform.
-Most of the features the block provides, can be further specified or completely turned off.
-
+This section explains the general settings that affect the core functionality of the block.
 The core functionality is to upload a video file to Moodle, which is then transferred to opencast.
 This is done via a cronjob, which processes all Upload Jobs in a first in first out fashion.
 
@@ -18,8 +15,8 @@ In this section you can define the following settings:
 * **Workflow to start after upload:**
     + **Workflow:** Set the unique shortname of the workflow that should be started after successfully uploading a video file to Opencast. When using the default workflows it is recommended to use the `Studio Upload` workflow.
     + **Publish to Engage:**  Select whether the videos should be published to the engage player. This results in the configuration field 'publishToEngage' to be set to `true` or `false` for the called workflow (only useful if the selected workflow supports this). When using the default workflows this checkbox needs to be ticked.
-    + Select if multiple videos with the same content hash are uploaded to opencast only once. *This is a legacy feature: Not recommended to be used. With our further development we strive to create one series per course.*
-    + Allow unassign from course others a 'delete' icon to the teacher, which will unassign the event from the series of the course. *This is a legacy feature: Only useful if events should not actually be deleted!*
+    + **Reuse existing uploads:** Select if multiple videos with the same content hash are uploaded to opencast only once. *This is a legacy feature: Not recommended to be used. With our further development we strive to create one series per course.*
+    + **Allow unassign from course** others a 'delete' icon to the teacher, which will unassign the event from the series of the course. *This is a legacy feature: Only useful if events should not actually be deleted!*
 * **Workflow to start before event is be deleted:** Setup the unique shortname of the workflow that should be started for deleting a video file in Opencast. If a workflow is selected, a 'delete' icon is offered to the teacher, which will actually delete the event in the Opencast system. When using the default workflows it is recommended to use the `Delete` workflow. We recommend to use only one of the two previous 'delete' options!
 * **Delete videofile from Moodle:** This setting causes the Moodle system to delete the file of the uploaded video as soon as possible. If set to false, the video file will remain in the Moodle system in the draft area until a cron job deletes it (usually some days later).
 * **Allowed file extensions:** With 'Allowed file extensions' you can specify which file extensions users can upload as videos. The extensions must exist as file types in Moodle under Site administration -> Server -> File types. If left blank all of Moodle's file types in the type group 'video' are allowed.
@@ -30,12 +27,6 @@ In this section the number of videos that is displayed can be configured.
 
 * **Number of videos:** Maximum number of videos to display in the block.
 * **Cache valid time:** Time in seconds, before the cache for the video data of each course is refreshed.
-
-## Settings for backup and restore
-
-In this section the backup and restore workflow can be configured. However, the default Opencast workflows do not support this feature. To be able to use this feature two additional workflows need to be added to Opencast. One workflow to duplicate an event in Opencast and another workflow to publish this duplicate. With the default Opencast workflows the [example workflows](backup_restore_workflows.md) can be used.
-
-* **Workflow for duplicating events:** This workflow is needed for restoring opencast events from one course into another. If not set, it is not possible to restore Opencast events. A block instance might be restore, but without a series and without events. In this dropdown menu only workflows with the `api` tag can be selected.
 
 ## Group and series
 
