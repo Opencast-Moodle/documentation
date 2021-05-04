@@ -18,7 +18,10 @@ The Opencast block plugin is available from [GitHub](https://github.com/Opencast
 * Min. Moodle Version: 3.3
 * Opencast API level:
     + Minimum: v1.1.0
-* Installed Opencast API tool.
+    + In addition to the roles to access the opencast API, the opencast user has to be provided with the role `ROLE_GROUP_MH_DEFAULT_ORG_EXTERNAL_APPLICATIONS`.
+      Otherwise, moodle will not have the capabilities to write or read series created through moodle.
+      This role can be changed, but has to be aligned with one of the roles you set under [Roles](general_settings.md#roles).
+* Installed and configured [Opencast API tool](https://github.com/Opencast-Moodle/moodle-tool_opencast).
 
 ## Features
 * Upload videos to Opencast
