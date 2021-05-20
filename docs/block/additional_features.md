@@ -41,6 +41,6 @@ For the availability features, the *Enable restricted access* feature must be ac
 In this section, unrelated configurations are collected.
 
 * **Download channel:** If not empty, teachers can download processed videos. The video files are served from the specified Opencast channel.
-* **Workflow tag:** Tag for Opencast workflow definitions that can be configured by the administrator and manually started by teachers.
+* **Workflow tag:** Tag for Opencast workflow definitions that can be configured and started by teachers.
 * **Support email:** If not empty, teachers can report problems for their uploaded videos. An email with technical information as well as a message entered by the teachers is sent to this support email address.
 * **Terms of use:** If not empty, a checkbox with the terms of use will appear on the "Video upload" page. Teachers must accept the entered terms of use before they can upload a video.

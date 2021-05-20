@@ -33,8 +33,8 @@ In this section the number of videos that is displayed can be configured.
 In this section it can be configured how groups and series created by Moodle are named in Opencast. In both cases the options `[COURSEID]` and `[COURSENAME]` are available which are placeholders for the numeric course ID and for the course name. The configuration options are:
 
 * **Create a group:** If checked, a group is created during the upload. This is a legacy feature, which assigns each uploaded event to a Opencast group.
-* **Group name:** Group to which the video is added. Important: The group name length is restricted to 128 Bytes. You can use the placeholders [COURSEID] and [COURSENAME] which are automatically replaced.
-* **Series name:** Series to which the video is added. You can use the placeholders [COURSEID] and [COURSENAME] which are automatically replaced.
+* **Group name:** Group to which the video is added. Important: The group name length is restricted to 128 Bytes. You can use the [placeholders](#placeholders) which are automatically replaced.
+* **Series name:** Series to which the video is added. You can use the [placeholders](#placeholders) which are automatically replaced.
 
 ## Roles
 
@@ -47,13 +47,7 @@ Roles which are not permanent will be removed if the video is hidden in the bloc
 
 To use this feature, you need to define at least one non-permanent role-action combination and the name of opencast workflow for republishing metadata. When using the default Opencast workflows this is `Republish Metadata`. In the video overview of the block, the instructors are able to change the visibility of each video. **However, the icon to do so, is only present if the two requirements mentioned above are met!** This process takes some time, since the opencast workflow needs to finish.
 
-In the ACL Roles the following placeholders can be used:
- * [COURSEID]: Will be replaced by the id of the course.
- * [COURSEGROUPID]: Should only be used in non-permanent roles.
- Depending on the visibility of the event, it is either replaced by the id of the course or
- (in case the visibility is restricted by groups) it is replaced by a 'G' followed by the id of the group.
- In case that multiple groups are selected in the visibility dialog, one ACL rule for every group is created.
- The basic role including the course id is removed in the case of group visibility.
+In the ACL Roles you can use [placeholders](#placeholders).
 
 To give an example for Roles, which also meets the LTI standard and which is used by the plugin by default, you can use the following setting:
 
@@ -67,3 +61,19 @@ To give an example for Roles, which also meets the LTI standard and which is use
 ## Metadata
 
 In this section it can be configured which metadata instructors can provide as well as which metadata instructors have to provide. By default instructors have to provide the title of a video.
+
+## Placeholders
+For some settings, you can use placeholders that are replaced when dealing with names for Opencast (e.g. when creating a series). 
+The following placeholders are available:
+
+* **[COURSEID]**: Will be replaced by the id of the course.
+* **[COURSENAME]**: Will be replaced by the name of the course.
+* **[COURSEGROUPID]**:  Should only be used in non-permanent roles.
+  Depending on the visibility of the event, it is either replaced by the id of the course or
+  (in case the visibility is restricted by groups) it is replaced by a 'G' followed by the id of the group.
+  In case that multiple groups are selected in the visibility dialog, one ACL rule for every group is created.
+  The basic role including the course id is removed in the case of group visibility.
+* **[USERNAME]**:: Will be replaced by the name of the user who uploaded a video or created a series. Roles with this placeholder must be permanent.
+  - **[USERNAME_LOW]**: Username in lowercase
+  - **[USERNAME_UP]**: Username in uppercase.
+  

@@ -15,7 +15,7 @@ The Opencast block plugin is available from [GitHub](https://github.com/Opencast
 
 ## Requirements
 
-* Min. Moodle Version: 3.3
+* Min. Moodle Version: 3.8
 * Opencast API level:
     + Minimum: v1.1.0
     + In addition to the roles to access the opencast API, the opencast user has to be provided with the role `ROLE_GROUP_MH_DEFAULT_ORG_EXTERNAL_APPLICATIONS`.
@@ -27,9 +27,10 @@ The Opencast block plugin is available from [GitHub](https://github.com/Opencast
 * Upload videos to Opencast
 * Record videos using Opencast studio
 * Overview of recorded and planned videos in the course
+* Download processed videos from Opencast  
 * Edit metadata and delete videos
 * Restrict the visibility of videos to moodle groups or prevent access by students at all
-* Allow teachers to start Opencast workflows (customized by the admin) for videos
+* Allow teachers to start Opencast workflows for videos
 * Linking an existing Opencast series to the course
 * Import videos from other moodle courses by duplicating them
 * Report problems to a support team with automatically including technical information
@@ -90,3 +91,7 @@ Opencast Videos|/blocks/opencast/index.php?courseid={courseid}|||editingteacher,
 ```
 Please take extra care that the `editingteacher,manager` list of roles should match the list of roles who are given the `block/opencast:addvideo` capability in your Moodle instance.
 After adding the Boost nav drawer item, you can also remove the `block/opencast:addinstance` capability from all roles as adding the block is not really necessary anymore.
+
+## Export and import settings
+If you want to export and import the administrator settings of the block, you can use the [Admin presets](https://moodle.org/plugins/block_admin_presets) block.
+The admin presets block can be added to the frontpage (https://yourmoodlesite.com/?redirect=0). After adding the block, you can select which settings to export or choose a file from which settings should be imported.
