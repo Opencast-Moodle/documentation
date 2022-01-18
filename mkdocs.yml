@@ -25,6 +25,9 @@ nav:
           - 'Appearance': 'block/appearance.md'
           - 'Additional features': 'block/additional_features.md'
           - 'Backup and restore workflows': 'block/backup_restore_workflows.md'
+    - 'Activity':
+        - 'About': 'mod/about.md'
+        - 'Settings': 'mod/settings.md'
     - 'Chunkupload':
         - 'About': 'chunkupload/about.md'
     - 'Repository':
