@@ -6,7 +6,7 @@ This repository contains the documentation for the Opencast-Moodle Usergroup.
 
 For the communication within the community there are two mediums:
 
-* [Mailinglist on Google Groups](https://groups.google.com/a/opencast.org/forum/#!forum/moodle-opencast): moodle-opencast@opencast.org
+* [Mailinglist on Google Groups](https://groups.google.com/a/opencast.org/g/lms): lms@opencast.org
 * Telegram: To join ask for a link on the mailinglist or use the Matrix bridge: #opencast-moodle-usergroup:matrix.org
 
 ## Meetings
