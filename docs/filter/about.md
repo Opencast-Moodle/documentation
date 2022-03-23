@@ -6,6 +6,10 @@ Look into the documentation of [repository_opencast](https://github.com/Opencast
 
 ![Filter opencast demonstration](../img/filter.png)
 
+## Installation
+
+The Opencast filter plugin is available from [GitHub](https://github.com/Opencast-Moodle/moodle-filter_opencast/releases).
+
 ## Requirements
 
 - [tool_opencast](https://github.com/Opencast-Moodle/moodle-tool_opencast)
