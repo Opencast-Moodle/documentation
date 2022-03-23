@@ -1,17 +1,17 @@
 # Opencast filter plugin
+The opencast filter can be used to embed opencast videos.
+The filter takes the HTML pasted by the opencast repository and replaces it by an iframe, which loads the [Paella Player 7](https://paellaplayer.upv.es/) with the respective opencast event.
+The filter itself has no influence on the embedded content, but simply takes the information created by the repository.
+Look into the documentation of [repository_opencast](https://github.com/Opencast-Moodle/moodle-repository_opencast) for details on that.
 
-The opencast filter can be used to embed opencast videos. Tested opencast players are Paella or Theodul.
-
-**Notice:** This plugin is work in progress and currently only works with the Atto editor.
-
-## Installation
-
-The Opencast repository plugin is available from [GitHub](https://github.com/Opencast-Moodle/moodle-filter_opencast).
+![Filter opencast demonstration](../img/filter.png)
 
 ## Requirements
 
-* Installed Opencast API tool.
-* Installed Opencast repository plugin.
+- [tool_opencast](https://github.com/Opencast-Moodle/moodle-tool_opencast)
+- [mod_opencast](https://github.com/Opencast-Moodle/moodle-mod_opencast)
+- [repository_opencast](https://github.com/Opencast-Moodle/moodle-repository_opencast): The filter can be installed without the repository
+  but it is necessary to enable teachers to insert opencast videos.
 
 ## Configuration
 
