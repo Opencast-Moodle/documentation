@@ -20,7 +20,7 @@ The Opencast block plugin is available from [GitHub](https://github.com/Opencast
 * Upload videos to Opencast
 * Record videos using Opencast studio
 * Overview of recorded and planned videos in the course
-* Overview of all series and videos that a use has access to (independent of a course)
+* Overview of all series and videos that a use has access to (independent of a course) ([Global overview](global_overview.md))
 * Download processed videos from Opencast  
 * Edit the video in the Opencast editor
 * Edit metadata and delete videos
@@ -32,7 +32,6 @@ The Opencast block plugin is available from [GitHub](https://github.com/Opencast
 * In integration with the activity [Opencast Video Provider](https://moodle.org/plugins/mod_opencast):
     + Provide the series or single videos as activity for students to watch directly in moodle
     + Restrict the visibility using the extensive moodle activity access settings
-
 
 ## Configuration
 
