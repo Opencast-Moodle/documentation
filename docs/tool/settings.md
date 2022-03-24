@@ -24,3 +24,5 @@ It shows if the tool is able to reach the Opencast server and if it is able to s
 If you want to use LTI to authenticate users e.g. for Opencast Studio, you must set the following settings:
 * **Consumer key:** LTI Consumer key as configured in Opencast
 * **Consumer secret:** LTI Consumer secret as configured in Opencast
+
+LTI must be configured in Opencast, see [LTI](https://docs.opencast.org/develop/admin/#modules/ltimodule/). If you want LTI users to be allowed to access Opencast studio, you must grant them the additional role `ROLE_STUDIO` in the Opencast LTI ocnfiguration.
