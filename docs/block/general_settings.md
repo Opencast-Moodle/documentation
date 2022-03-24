@@ -12,21 +12,21 @@ Then the cron job is not terminated early.
 In this section you can define the following settings:
 
 * **Limit upload job by cron:** How many videos are uploaded within one run of the cronjob. If it is set to 0, the number of videos is not limited.
-* **Workflow to start after upload:**
-    + **Workflow:** Set the unique shortname of the workflow that should be started after successfully uploading a video file to Opencast. When using the default workflows it is recommended to use the `Studio Upload` workflow.
-    + **Publish to Engage:**  Select whether the videos should be published to the engage player. This results in the configuration field 'publishToEngage' to be set to `true` or `false` for the called workflow (only useful if the selected workflow supports this). When using the default workflows this checkbox needs to be ticked.
-    + **Reuse existing uploads:** Select if multiple videos with the same content hash are uploaded to opencast only once. *This is a legacy feature: Not recommended to be used. With our further development we strive to create one series per course.*
-    + **Allow unassign from course** others a 'delete' icon to the teacher, which will unassign the event from the series of the course. *This is a legacy feature: Only useful if events should not actually be deleted!*
-* **Workflow to start before event is be deleted:** Setup the unique shortname of the workflow that should be started for deleting a video file in Opencast. If a workflow is selected, a 'delete' icon is offered to the teacher, which will actually delete the event in the Opencast system. When using the default workflows it is recommended to use the `Delete` workflow. We recommend to use only one of the two previous 'delete' options!
+* **Workflow to start after upload:** Set the unique shortname of the workflow that should be started after successfully uploading a video file to Opencast. When using the default workflows it is recommended to use the `Studio Upload` workflow.
+* **Publish to Engage:**  Select whether the videos should be published to the engage player. This results in the configuration field 'publishToEngage' to be set to `true` or `false` for the called workflow (only useful if the selected workflow supports this). When using the default workflows this checkbox needs to be ticked.
+* **Ingest upload:** Use the Opencast ingest service for uploading videos. For this to work, you must have configured ingest nodes in your Opencast instance.
+* **Reuse existing uploads:** Select if multiple videos with the same content hash are uploaded to opencast only once. *This is a legacy feature: Not recommended to be used. With our further development we strive to create one series per course.*
+* **Allow unassign from course** others a 'delete' icon to the teacher, which will unassign the event from the series of the course. *This is a legacy feature: Only useful if events should not actually be deleted!*
+* **Workflow to start before event is be deleted:** Setup the unique shortname of the workflow that should be started for deleting a video file in Opencast. If a workflow is selected, a 'delete' icon is offered to the teacher, which will actually delete the event in the Opencast system. When using the default workflows it is recommended to use the `Delete` workflow. We recommend to use only one of the two previous 'delete' options! With Opencast 10, this option is usually not required anymore since videos are automatically retracted before deletion.
 * **Delete videofile from Moodle:** This setting causes the Moodle system to delete the file of the uploaded video as soon as possible. If set to false, the video file will remain in the Moodle system in the draft area until a cron job deletes it (usually some days later).
 * **Allowed file extensions:** With 'Allowed file extensions' you can specify which file extensions users can upload as videos. The extensions must exist as file types in Moodle under Site administration -> Server -> File types. If left blank all of Moodle's file types in the type group 'video' are allowed.
+* **Maximum number of series:** Specifies how many series can be assigned to a course. Teachers won't be able to add/import more series if the maximum number is reached.
 
 ## Settings for a block instance
 
 In this section the number of videos that is displayed can be configured.
 
 * **Number of videos:** Maximum number of videos to display in the block.
-* **Cache valid time:** Time in seconds, before the cache for the video data of each course is refreshed.
 
 ## Group and series
 
@@ -58,6 +58,8 @@ To give an example for Roles, which also meets the LTI standard and which is use
 | [COURSEID]_Instructor                           | write,read | Yes       |
 | [COURSEGROUPID]_Learner                         | read       | No        |
 
+You can also specifiy an owner role that identifies the owner of a video/series. The role must also be specified in the roles table. The role must be permanent and include a user-related placeholder, e.g. ROLE_OWNER_[USER_EMAIL]. It should not include any course-related placeholders.
+
 ## Metadata
 
 In this section it can be configured which metadata instructors can provide as well as which metadata instructors have to provide. By default instructors have to provide the title of a video.
@@ -76,4 +78,6 @@ The following placeholders are available:
 * **[USERNAME]**:: Will be replaced by the name of the user who uploaded a video or created a series. Roles with this placeholder must be permanent.
   - **[USERNAME_LOW]**: Username in lowercase
   - **[USERNAME_UP]**: Username in uppercase.
+  - **[USER_EMAIL]**: Email of the user
+  - **[USER_EXTERNAL_ID]**: External ID of the user
   

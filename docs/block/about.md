@@ -2,7 +2,7 @@
 
 This block can be used to link moodle courses to Opencast series. 
 Users with respective privileges (in the following called instructors) can use this block to upload videos via moodle to Opencast. 
-These videos are transmitted to the Opencast system by the cronjob and create an event in the respective series there.
+These videos are transmitted to the Opencast system by a cronjob and create an event in the respective series there.
 
 The block can be used to automatically set the access privileges of moodle users enrolled in the course. 
 All events belonging to the series are displayed in the block. 
@@ -14,20 +14,15 @@ Further, if setup correctly, the instructors are able to restrict the visibility
 The Opencast block plugin is available from [GitHub](https://github.com/Opencast-Moodle/moodle-block_opencast/releases) as well as from the [Moodle plugins directory](https://moodle.org/plugins/block_opencast).
 
 ## Requirements
-
-* Min. Moodle Version: 3.8
-* Opencast API level:
-    + Minimum: v1.1.0
-    + In addition to the roles to access the opencast API, the opencast user has to be provided with the role `ROLE_GROUP_MH_DEFAULT_ORG_EXTERNAL_APPLICATIONS`.
-      Otherwise, moodle will not have the capabilities to write or read series created through moodle.
-      This role can be changed, but has to be aligned with one of the roles you set under [Roles](general_settings.md#roles).
-* Installed and configured [Opencast API tool](https://github.com/Opencast-Moodle/moodle-tool_opencast).
+* Installed and configured [Opencast API tool](https://github.com/Opencast-Moodle/moodle-tool_opencast)
 
 ## Features
 * Upload videos to Opencast
 * Record videos using Opencast studio
 * Overview of recorded and planned videos in the course
+* Overview of all series and videos that a use has access to (independent of a course)
 * Download processed videos from Opencast  
+* Edit the video in the Opencast editor
 * Edit metadata and delete videos
 * Restrict the visibility of videos to moodle groups or prevent access by students at all
 * Allow teachers to start Opencast workflows for videos
@@ -59,19 +54,24 @@ There are additional capabilities, with which you can control the access to the 
 |--------------------------------------|-------------------------------|------------------------------------------------------------------------------------------------------|
 | block/opencast:addactivity           | editingteacher, manager       | Add Opencast Video Provider activity for a series to course |
 | block/opencast:addactivityepisode    | editingteacher, manager       | Add Opencast Video Provider activity for an episode to course |
+| block/opencast:addinstance           | editingteacher, manager       | Add a block instance to a course. |
 | block/opencast:addlti                | editingteacher, manager       | Add Opencast LTI series module to course |
 | block/opencast:addltiepisode         | editingteacher, manager       | Add Opencast LTI episode module to course |
 | block/opencast:addvideo              | editingteacher, manager       | Add a video via Moodle to opencast |
+| block/opencast:canchangeownerforallvideos | manager                  | Can change the owner of videos without being the owner itself |
 | block/opencast:createseriesforcourse | manager                       | Create a new series if block/course is not yet associated with one |
 | block/opencast:defineseriesforcourse | manager                       | Change the series ID which is associated with the block instance or rather course |
 | block/opencast:deleteevent           | editingteacher, manager       | Allows to delete a video as specified above |
 | block/opencast:downloadvideo         | editingteacher, manager       | Download processed videos |
+| block/opencast:importseriesintocourse | manager                      | Can import a series into a course |
+| block/opencast:manageseriesforcourse | manager                       | Can set the default series of a course and delete series from a course |
 | block/opencast:manualimporttarget    | editingteacher, manager       | Manually import videos from other courses |
 | block/opencast:manualimportsource    | editingteacher, manager       | Manually import videos from a course |
+| block/opencast:myaddinstance         | user                          | Add a block instance to the dashboard. |
 | block/opencast:startworkflow         | editingteacher, manager       | Start a preconfigured workflow for a video |
 | block/opencast:unassignevent         | -                             | Allows to unassign a video from the series of the course as specified above. |
 | block/opencast:viewunpublishedvideos | editingteacher, manager       | View the list of all videos of the course, which are available in opencast (even not published ones) |
-
+| block/opencast:viewusers             | manager                       | View all Moodle users when trying to change the owner of a video on the global overview page |
 
 ## Logging
 
@@ -95,3 +95,4 @@ After adding the Boost nav drawer item, you can also remove the `block/opencast:
 ## Export and import settings
 If you want to export and import the administrator settings of the block, you can use the [Admin presets](https://moodle.org/plugins/block_admin_presets) block.
 The admin presets block can be added to the frontpage (https://yourmoodlesite.com/?redirect=0). After adding the block, you can select which settings to export or choose a file from which settings should be imported.
+In Moodle 4, this functionality is partly integrated into the core.
