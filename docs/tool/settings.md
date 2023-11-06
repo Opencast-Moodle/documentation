@@ -30,6 +30,7 @@ That user will be used, to connect to Opencast from within Moodle. It needs to h
 
 Once such a user is created, you must add it to the group `Opencast Project External Applications` *(role `ROLE_GROUP_MH_DEFAULT_ORG_EXTERNAL_APPLICATIONS`)*,
 which is created by Opencast by default, or you must add the required external API roles to that user in a different way.
+Note, that the roles above are the minimal required roles and additional roles may be added, if required.
 
 The tool plugin has the following configuration options:
 
