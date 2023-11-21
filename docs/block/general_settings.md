@@ -1,14 +1,12 @@
 # General Settings
-
-This section explains the general settings that affect the core functionality of the block.
-The core functionality is to upload a video file to Moodle, which is then transferred to opencast.
+This section explains the general settings, that affect the core functionality of the block.
+The core functionality is to upload a video file to Moodle, which is then transferred to Opencast.
 This is done via a cronjob, which processes all Upload Jobs in a first in first out fashion.
 
-Please make sure that the *Maximum Time limit* for cron execution in *Site administration*->*Server*->*Performance* is not restricted (value of 0 means no time limit).
+Please make sure, that the *Maximum Time limit* for cron execution in *Site administration*->*Server*->*Performance* is not restricted (value of 0 means no time limit).
 Then the cron job is not terminated early.
 
 ## Settings for upload jobs
-
 In this section you can define the following settings:
 
 * **Limit upload job by cron:** How many videos are uploaded within one run of the cronjob. If it is set to 0, the number of videos is not limited.
@@ -23,13 +21,11 @@ In this section you can define the following settings:
 * **Maximum number of series:** Specifies how many series can be assigned to a course. Teachers won't be able to add/import more series if the maximum number is reached.
 
 ## Settings for a block instance
-
 In this section the number of videos that is displayed can be configured.
 
 * **Number of videos:** Maximum number of videos to display in the block.
 
 ## Group and series
-
 In this section it can be configured how groups and series created by Moodle are named in Opencast. In both cases the options `[COURSEID]` and `[COURSENAME]` are available which are placeholders for the numeric course ID and for the course name. The configuration options are:
 
 * **Create a group:** If checked, a group is created during the upload. This is a legacy feature, which assigns each uploaded event to a Opencast group.
@@ -37,19 +33,21 @@ In this section it can be configured how groups and series created by Moodle are
 * **Series name:** Series to which the video is added. You can use the [placeholders](#placeholders) which are automatically replaced.
 
 ## Roles
+In this section you can define, which ACL roles are added to a video. You can add and delete roles and define the respective actions for those roles.
 
-In this section you can define which ACL rules are added to a video. You can add and delete roles and define the respective actions for these roles.
+That might be relevant only, if you want to control the access privileges for your Opencast videos via Moodle. In this case, it is recommended, that you set up the *moodle-role-provider* for your Opencast system (https://docs.opencast.org/develop/admin/configuration/security.user.moodle/).
 
-This might only be relevant if you want to control the access privileges for your opencast videos via Moodle. In this case it is recommended that you setup the moodle-role-provider for your Opencast system (https://docs.opencast.org/develop/admin/configuration/security.user.moodle/).
+It is possible, to select, whether roles should be **permanent** or not. Non-permanent roles can be used, to manually change the access of certain user groups (e.g. students) for each video.
+Roles, which are not permanent, will be removed, if the video is hidden in the block overview, and added again, if the video is made visible.
 
-It is possible to select if roles should be **permanent** or not. Non-permanent roles can be used to manually change the access of certain user groups (e.g. students) for each video.
-Roles which are not permanent will be removed if the video is hidden in the block overview and added again if the video is made visible.
+To use this feature, you need to define at least one non-permanent role-action combination and the name of Opencast workflow for republishing metadata. Use the setting `Workflow for updating metadata`, to specify that workflow.
+When using the default Opencast workflows that is `Republish Metadata`. In the video overview of the block, the instructors are able to change the visibility of each video.
+This process takes some time, since the Opencast workflow needs to finish.<br>
+**However, the icon to do so, is only present, if the two requirements mentioned above are met!**
 
-To use this feature, you need to define at least one non-permanent role-action combination and the name of opencast workflow for republishing metadata. When using the default Opencast workflows this is `Republish Metadata`. In the video overview of the block, the instructors are able to change the visibility of each video. **However, the icon to do so, is only present if the two requirements mentioned above are met!** This process takes some time, since the opencast workflow needs to finish.
+In the ACL roles you can use [placeholders](#placeholders).
 
-In the ACL Roles you can use [placeholders](#placeholders).
-
-To give an example for Roles, which also meets the LTI standard and which is used by the plugin by default, you can use the following setting:
+To give an example for roles, which also meets the LTI standard and which is used by the plugin by default, you can use the following setting:
 
 | Role                                            | Actions    | Permanent |
 | ------------------------------------------------|------------|-----------|
@@ -58,14 +56,16 @@ To give an example for Roles, which also meets the LTI standard and which is use
 | [COURSEID]_Instructor                           | write,read | Yes       |
 | [COURSEGROUPID]_Learner                         | read       | No        |
 
-You can also specifiy an owner role that identifies the owner of a video/series. The role must also be specified in the roles table. The role must be permanent and include a user-related placeholder, e.g. ROLE_OWNER_[USER_EMAIL]. It should not include any course-related placeholders.
+You can also specify an owner role, that identifies the owner of a video/series, with the setting `ACL owner role`. The role must also be specified in the roles table. The role must be permanent and include a user-related placeholder, e.g. `ROLE_OWNER_[USER_EMAIL]`. It should not include any course-related placeholders.
 
-## Metadata
+## Event Metadata
+In this section, it can be configured, which metadata instructors can provide as well as which metadata instructors have to provide, for uploading videos to Opencast. By default, instructors have to provide the title of a video.
 
-In this section it can be configured which metadata instructors can provide as well as which metadata instructors have to provide. By default instructors have to provide the title of a video.
+## Series Metadata
+In this section, it can be configured, which metadata instructors can provide as well as which metadata instructors have to provide, for creating Opencast series. By default, instructors have to provide the title, the rights holder and the license of a series.
 
 ## Placeholders
-For some settings, you can use placeholders that are replaced when dealing with names for Opencast (e.g. when creating a series). 
+For some settings, you can use placeholders, that are replaced, when dealing with names for Opencast (e.g. when creating a series). 
 The following placeholders are available:
 
 * **[COURSEID]**: Will be replaced by the id of the course.
@@ -76,8 +76,8 @@ The following placeholders are available:
   In case that multiple groups are selected in the visibility dialog, one ACL rule for every group is created.
   The basic role including the course id is removed in the case of group visibility.
 * **[USERNAME]**:: Will be replaced by the name of the user who uploaded a video or created a series. Roles with this placeholder must be permanent.
-  - **[USERNAME_LOW]**: Username in lowercase
+  - **[USERNAME_LOW]**: Username in lowercase.
   - **[USERNAME_UP]**: Username in uppercase.
-  - **[USER_EMAIL]**: Email of the user
-  - **[USER_EXTERNAL_ID]**: External ID of the user
+  - **[USER_EMAIL]**: Email of the user.
+  - **[USER_EXTERNAL_ID]**: External ID of the user.
   
