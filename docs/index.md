@@ -11,4 +11,4 @@ Currently, there are six Opencast Moodle plugins. These are:
 * **[Repository](repository/about.md):** This plugin provides a repository for accessing uploaded videos.
 * **[Filter](filter/about.md):** This plugin provides a filter, that replaces links to Opencast with a player.
 
-<br><img src="img/relationship.png" width="650"><br>
+<br><img src="https://raw.githubusercontent.com/Opencast-Moodle/documentation/main/docs/img/relationship.png" width="650"><br>
