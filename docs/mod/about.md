@@ -18,24 +18,24 @@ In the following, the two usage scenarios, providing a series or an episode, are
 ### Use case 1 - Provide a series
 The teacher wants to provide a series for students. For example, this series contains all lecture recordings.
 1. Add a new "Video (Opencast)" activity.<br>
-   <img src="../img/mod/add_activity.png" width="500">
+   <img src="https://raw.githubusercontent.com/Opencast-Moodle/documentation/main/docs/img/mod/add_activity.png" width="500">
 2. Choose the series or enter the Opencast id of the series manually, you want to display:<br>
-   <img src="../img/mod/configure_activity.png" width="500">
+   <img src="https://raw.githubusercontent.com/Opencast-Moodle/documentation/main/docs/img/mod/configure_activity.png" width="500">
 3. If you want, you can specify further configurations like access restrictions.
 4. The videos in the series can be either displayed in a list view or in a preview view:<br>
-   <img src="../img/mod/series_list_view.png" width="500"><br>
-   <img src="../img/mod/series_preview_view.png" width="500">
+   <img src="https://raw.githubusercontent.com/Opencast-Moodle/documentation/main/docs/img/mod/series_list_view.png" width="500"><br>
+   <img src="https://raw.githubusercontent.com/Opencast-Moodle/documentation/main/docs/img/mod/series_preview_view.png" width="500">
 
 
 ### Use case 2 - Provide an episode
 The teacher wants to provide a single episode for students. For example, this episode belongs to a specific lecture.
 1. Add a new "Video (Opencast)" activity.<br>
-   <img src="../img/mod/add_activity.png" width="500">
+   <img src="https://raw.githubusercontent.com/Opencast-Moodle/documentation/main/docs/img/mod/add_activity.png" width="500">
 2. Choose the series or enter the Opencast id of the episode manually, you want to display, as in the previous use case. The activity automatically recognizes, that the entered id is an episode.<br>
-   <img src="../img/mod/configure_activity_single.png" width="500">
+   <img src="https://raw.githubusercontent.com/Opencast-Moodle/documentation/main/docs/img/mod/configure_activity_single.png" width="500">
 3. If you want, you can specify further configurations like access restrictions.
 4. The activity directly displays a player, that shows the video:<br>
-   <img src="../img/mod/video_view.png" width="500">
+   <img src="https://raw.githubusercontent.com/Opencast-Moodle/documentation/main/docs/img/mod/video_view.png" width="500">
 
 ## Configuration
 For the configuration of the Opencast activity plugin, see [settings](settings.md).
