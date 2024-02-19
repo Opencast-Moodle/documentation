@@ -5,7 +5,7 @@ To use the backup and restore functionality, you need to specify a duplication w
 If you want to create your own workflow, here are the descriptions of the general restore process:
 
 In the restore process, we first create a new opencast series for the new course. Afterwards, for each event UID of the
-backup a 'duplicate' workflow is started, while the new series UID is given as a configuration parameter to the start workflow call. The variable, used to store the series ID, is 'seriesID'.
+backup a 'duplicate' workflow is started, while the new series UID is given as a configuration parameter to the start workflow call. The variable, used to store the series ID, is 'seriesId'.
 In our workflow definition example from above, the first workflow *lms-automated-duplicate* will duplicate the event and will start a new workflow for the new event. This second workflow *lms-publish-duplicate* then assigns the series of the new course to the new event.
 
 In order to be able to select your duplicate workflow within Moodle, you need to assign the *'api'* tag to it, since the viable duplicate workflows are filtered by that.
@@ -51,7 +51,7 @@ The workflow that is triggered by Moodle:
       <configurations>
         <configuration key="workflow-definition">lms-publish-duplicate</configuration>
         <configuration key="media-package">${duplicate_media_package_1_id}</configuration>
-        <configuration key="seriesID">${seriesID}</configuration>
+        <configuration key="seriesId">${seriesId}</configuration>
       </configurations>
     </operation>
 
@@ -115,7 +115,7 @@ The first workflow triggers this second workflow on the duplicated *mediapackage
       exception-handler-workflow="partial-error"
       description="Apply series metadata and acl">
       <configurations>
-        <configuration key="series">${seriesID}</configuration>
+        <configuration key="series">${seriesId}</configuration>
         <configuration key="attach">*/*</configuration>
         <configuration key="apply-acl">true</configuration>
         <configuration key="copy-metadata">isPartOf</configuration>
