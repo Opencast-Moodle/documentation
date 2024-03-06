@@ -16,11 +16,11 @@ Prior to version v4.1-r1 of the plugin, the following workflows must use "series
 #### Important Opencast database change
 In addition to the steps above, if the above mentioned issue is applied to your system, then you might encounter the issue of unsuccessful duplication for old videos when using the new workflows with "seriesId", for that to be fixed, you have to manually perform the following SQL database queries against your Opencast database:
 
-1. To make sure that "oc_assets_properties" table has any record of "seriesID":
+- To make sure that "oc_assets_properties" table has any record of "seriesID":
 
 `SELECT * FROM oc_assets_properties where property_name='seriesID';`
 
-2. If the above query indicates that "seriesID" exists, you have to perform the following SQL query to delete it from the table:
+- If the above query indicates that "seriesID" exists, you have to perform the following SQL query to delete it from the table:
 
 `DELETE FROM oc_assets_properties WHERE property_name='seriesID';`
 
