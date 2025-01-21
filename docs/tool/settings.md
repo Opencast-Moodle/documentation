@@ -1,50 +1,90 @@
 # Settings
-The plugins allow you, to connect your Moodle instance to multiple Opencast instances. For each instance, you must configure the settings, described below.
-The configured instances are listed in the table under *Opencast Instances*. You can add new instances
-by clicking on the *Add instance* button.
 
-Next to an automatically set and constant ID, each instance has a name, which you can choose.
-The admin settings page of the plugin has an own configuration section for each instance,
-that is classified with the name of the corresponding instance. Note, that that section
-for a newly added instance will be visible only after saving changes. The same applies to
-the deletion of an instance.
+The configuration settings of the plugin consist of the following sections:
 
-Furthermore, each instance has additional options, that can be configured with the table:
-* **Is visible to teachers:** If checked, the videos of the corresponding instance are visible in the overview of the block *Opencast Videos* in a course.
-Otherwise, the videos of the corresponding instance are hidden.
-* **Default:** There must be exactly one default instance. Such an instance has the following additional properties:<br>
-  * It is automatically selected in the configuration form of the *Opencast activity plugin*;
-  * It is automatically selected in the upload form for a video of the *Opencast activity plugin*;
-  * It specifies the allowed video file extensions for an upload of a video file via drag and drop in the activity sections of a course (with edit mode turned on);
-  <!--
-  * It is used for some pages, if no instance is specified within the corresponding URL;
-  * It is used as a default value for *seriesmapping (extends \core\persistent)* via closure;
-  -->
+## Instances
 
-Before being able to configure the Opencast API tool, a user has to be created in Opencast. 
-That user will be used, to connect to Opencast from within Moodle. It needs to have the following roles in Opencast:
+The plugin allows you to connect your Moodle instance to multiple Opencast instances. For each instance, you must configure the settings described below.
+
+The configured instances are listed in the table under **_Opencast Instances_**. You can add new instances by clicking on the **_Add instance_** button.
+
+Each instance is assigned an automatically generated, constant ID. Additionally, you can specify a custom name for each instance. The settings for each instance are displayed in a dedicated (sub-)section, labeled with the instance name.
+
+**NOTE**: The configuration (sub-)section for a newly added instance will be visible only after clicking _Save changes_. The same applies when deleting an instance.
+
+Each instance offers additional configurable options:
+
+- **Is visible to teachers**: If enabled, videos from the corresponding instance are visible in the _Opencast Videos_ block within a course. If disabled, the videos remain hidden.
+
+- **Default**: There must be exactly one default instance. The default instance has the following properties:
+  - It is selected automatically in plugins such as Opencast H5P Integration.
+  - It takes precedence over other instances in dropdowns to select between instances.
+  - It determines the allowed video file extensions for drag-and-drop uploads in course activity sections (with edit mode enabled).
+
+![Tool Opencast Settings Instances](../img/tool/instances.png)
+
+## Prerequisites
+
+Before configuring the Opencast API tool, a user must be created in Opencast with the following roles:
 
 * `ROLE_API`
 * `ROLE_API_*`
 * `ROLE_SUDO`
 
-Once such a user is created, you must add it to the group `Opencast Project External Applications` *(role `ROLE_GROUP_MH_DEFAULT_ORG_EXTERNAL_APPLICATIONS`)*,
-which is created by Opencast by default, or you must add the required external API roles to that user in a different way.
-Note, that the roles above are the minimal required roles and additional roles may be added, if required.
+Once the user is created, it must be added to the group `Opencast Project External Applications` *(role `ROLE_GROUP_MH_DEFAULT_ORG_EXTERNAL_APPLICATIONS`)* or assigned the necessary API roles by other means.
 
-The tool plugin has the following configuration options:
+**NOTE**: The roles listed above are the minimum required; additional roles may be necessary, for example:
 
-* **Opencast API URL:** This is the base URL of the Opencast system. If you have a multiple server setup, this should be the URL of the admin server. Provide the URL including `http://` or `https://`.<br>For example: `https://stable.opencast.org`
-* **Username for API calls:** Provide the username of the previously created Opencast user.
-* **Password for API user:** Provide the password of the previously created Opencast user.
-* **Overall API request execution timeout:**: Configure the time in milliseconds, each API request to Opencast might take until timeout.
-* **Connection timeout:** Setup the time in milliseconds, while Moodle is trying to connect to Opencast until timeout.
+* `ROLE_UI_EVENTS_EMBEDDING_CODE_VIEW`: Required for using the Opencast Filter plugin with LTI authentication in a multi-node Opencast instance.
+* `ROLE_STUDIO`: Required for access to Opencast Studio.
 
-You can test, whether your API user configuration is correct, by clicking on the *Connection Test Tool* button. 
-It shows, whether the tool is able, to reach the Opencast server, and whether it is able to successfully authenticate with the configured API user.
+## Instance Configurations
 
-If you want to use LTI, to authenticate users, e.g., for Opencast Studio, you must set the following settings:
-* **Consumer key:** LTI Consumer key as configured in Opencast
-* **Consumer secret:** LTI Consumer secret as configured in Opencast
+Each instance has the following configuration options, displayed in a dedicated (sub-)section named after the instance:
 
-LTI must be configured in Opencast, see [LTI](https://docs.opencast.org/develop/admin/#modules/ltimodule/). If you want LTI users to be allowed, to access Opencast studio, you must grant them the additional role `ROLE_STUDIO` in the Opencast LTI configuration.
+* **Opencast API URL:** The base URL of the Opencast system. If you have a multi-node Opencast setup, this should be the URL of the admin server. Provide the URL including `http://` or `https://` (e.g. `https://stable.opencast.org`)
+
+* **Username of API user:** The username of the previously created Opencast user.
+
+* **Password of API user:** The password of the previously created Opencast user.
+
+* **Overall API request execution timeout:**: Timeout (in milliseconds) for API requests to Opencast. Set to "0" for no limit.
+
+* **Connection timeout:** Timeout (in milliseconds) for Moodle to establish a connection with Opencast. Set to "0" for no limit.
+
+If you wish to use LTI for user authentication (e.g., for Opencast Studio or with `Secure Static Files` enabled), configure the following settings:
+
+* **Consumer key:** LTI Consumer key as set in Opencast.
+
+* **Consumer secret:** LTI Consumer secret as set in Opencast.
+
+For LTI configuration details, see [LTI](https://docs.opencast.org/r/16.x/admin/#configuration/ltimodule/#about-lti).
+
+![Tool Opencast Settings Configurations](../img/tool/configurations.png)
+
+## Maintenance Settings
+
+The maintenance settings section allows you to control access to Opencast during maintenance periods. Options include:
+
+- **Maintenance mode**: Choose between:
+  - Disable: No maintenance.
+  - Read Only: Access is restricted to reading data only.
+  - Enable: Full access restriction.
+
+- **Notification Level**: Define the severity of the maintenance message (Warning, Error, Information, Success).
+
+- **Maintenance Message**: The notification message displayed during maintenance. If empty, a default generic message will be displayed.
+
+- **Maintenance starts at**: The start date/time of maintenance.
+
+- **Maintenance ends at**: The end date/time of maintenance.
+
+**NOTE**: You can synchronize Opencast maintenance settings using the _Sync Opencast Maintenance Mode_ button (feature pending implementation).
+
+![Tool Opencast Settings Maintenance](../img/tool/maintenance.png)
+
+## Connection test tool
+
+You can verify your API user configuration by clicking the Connection Test Tool button. This tool checks if Moodle can successfully connect to Opencast and authenticate with the configured API user.
+
+![Tool Opencast Settings Connection test tool](../img/tool/connection_test_tool.png)
