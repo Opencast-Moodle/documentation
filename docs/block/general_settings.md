@@ -7,17 +7,33 @@ Please make sure, that the *Maximum Time limit* for cron execution in *Site admi
 Then the cron job is not terminated early.
 
 ## Settings for upload jobs
+
 In this section you can define the following settings:
 
 * **Limit upload job by cron:** How many videos are uploaded within one run of the cronjob. If it is set to 0, the number of videos is not limited.
+
 * **Workflow to start after upload:** Set the unique shortname of the workflow that should be started after successfully uploading a video file to Opencast. When using the default workflows it is recommended to use the `Studio Upload` workflow.
+
+* **Show workflow configurations during upload:** Displays the workflow configuration panel directly within the upload form. When enabled, teachers can access additional upload processing options, allowing them to customize the Opencast workflow based on their specific needs.
+
+* **Allowed upload workflow configurations:** Specifies a comma-separated list of workflow configuration panel element IDs that are permitted for selection during the video upload process. These workflows must already exist in the workflow configuration panel and will be available to teachers on the upload page for further processing customization. (e.g. `straightToPublishing,whisper_de,vosk_en`)
+
+**Note:** if empty, all elements in the workflow configuration panel such as input and select elements will be provided to the teachers.
+
 * **Publish to Engage:**  Select whether the videos should be published to the engage player. This results in the configuration field 'publishToEngage' to be set to `true` or `false` for the called workflow (only useful if the selected workflow supports this). When using the default workflows this checkbox needs to be ticked.
+
 * **Ingest upload:** Use the Opencast ingest service for uploading videos. For this to work, you must have configured ingest nodes in your Opencast instance.
+
 * **Reuse existing uploads:** Select if multiple videos with the same content hash are uploaded to opencast only once. *This is a legacy feature: Not recommended to be used. With our further development we strive to create one series per course.*
+
 * **Allow unassign from course** others a 'delete' icon to the teacher, which will unassign the event from the series of the course. *This is a legacy feature: Only useful if events should not actually be deleted!*
+
 * **Workflow to start before event is be deleted:** Setup the unique shortname of the workflow that should be started for deleting a video file in Opencast. If a workflow is selected, a 'delete' icon is offered to the teacher, which will actually delete the event in the Opencast system. When using the default workflows it is recommended to use the `Delete` workflow. We recommend to use only one of the two previous 'delete' options! With Opencast 10, this option is usually not required anymore since videos are automatically retracted before deletion.
+
 * **Delete videofile from Moodle:** This setting causes the Moodle system to delete the file of the uploaded video as soon as possible. If set to false, the video file will remain in the Moodle system in the draft area until a cron job deletes it (usually some days later).
+
 * **Allowed file extensions:** With 'Allowed file extensions' you can specify which file extensions users can upload as videos. The extensions must exist as file types in Moodle under Site administration -> Server -> File types. If left blank all of Moodle's file types in the type group 'video' are allowed.
+
 * **Maximum number of series:** Specifies how many series can be assigned to a course. Teachers won't be able to add/import more series if the maximum number is reached.
 
 ## Settings for a block instance
@@ -29,7 +45,9 @@ In this section the number of videos that is displayed can be configured.
 In this section it can be configured how groups and series created by Moodle are named in Opencast. In both cases the options `[COURSEID]` and `[COURSENAME]` are available which are placeholders for the numeric course ID and for the course name. The configuration options are:
 
 * **Create a group:** If checked, a group is created during the upload. This is a legacy feature, which assigns each uploaded event to a Opencast group.
+
 * **Group name:** Group to which the video is added. Important: The group name length is restricted to 128 Bytes. You can use the [placeholders](#placeholders) which are automatically replaced.
+
 * **Series name:** Series to which the video is added. You can use the [placeholders](#placeholders) which are automatically replaced.
 
 ## Roles
@@ -65,7 +83,7 @@ In this section, it can be configured, which metadata instructors can provide as
 In this section, it can be configured, which metadata instructors can provide as well as which metadata instructors have to provide, for creating Opencast series. By default, instructors have to provide the title, the rights holder and the license of a series.
 
 ## Placeholders
-For some settings, you can use placeholders, that are replaced, when dealing with names for Opencast (e.g. when creating a series). 
+For some settings, you can use placeholders, that are replaced, when dealing with names for Opencast (e.g. when creating a series).
 The following placeholders are available:
 
 * **[COURSEID]**: Will be replaced by the id of the course.
@@ -80,4 +98,3 @@ The following placeholders are available:
   - **[USERNAME_UP]**: Username in uppercase.
   - **[USER_EMAIL]**: Email of the user.
   - **[USER_EXTERNAL_ID]**: External ID of the user.
-  
