@@ -11,7 +11,7 @@ site_dir: 'site'
 
 # The css files in this list will override existing css from the default theme
 extra_css:
-   - css/extra.css
+    - css/extra.css
 # Navigation
 nav:
     - Home: 'index.md'
@@ -21,6 +21,7 @@ nav:
     - 'Block':
         - 'About': 'block/about.md'
         - 'Settings':
+
             - 'Shared Settings': 'block/shared_settings.md'
             - 'General Settings': 'block/general_settings.md'
             - 'Appearance': 'block/appearance.md'
@@ -38,3 +39,5 @@ nav:
     - 'Filter':
         - 'About': 'filter/about.md'
         - 'Settings': 'filter/settings.md'
+    - 'Developer Guide':
+        - 'Contribution Guidelines': 'devs/guides.md'
