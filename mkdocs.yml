@@ -21,6 +21,8 @@ nav:
     - 'Block':
         - 'About': 'block/about.md'
         - 'Settings':
+
+            - 'Shared Settings': 'block/shared_settings.md'
             - 'General Settings': 'block/general_settings.md'
             - 'Appearance': 'block/appearance.md'
             - 'Additional features': 'block/additional_features.md'

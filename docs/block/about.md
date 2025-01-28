@@ -1,41 +1,57 @@
 # Opencast block plugin
-This block can be used, to link Moodle courses to Opencast series. 
-Users with respective privileges (in the following called instructors) can use this block, to upload videos via Moodle to Opencast. 
+This block can be used, to link Moodle courses to Opencast series.
+Users with respective privileges (in the following called instructors) can use this block, to upload videos via Moodle to Opencast.
 These videos are transmitted to the Opencast system by a cronjob and create an event in the respective series there.
 Other plugins, like the *Opencast activity plugin*, can be used afterwards, to provide a complete series or a bulk of videos within a course.
 
-The block can be used, to automatically set the access privileges of Moodle users enrolled in the course. 
-All events belonging to the series are displayed in the block. 
-This way, the instructors get an overview of all recorded lectures as well as planned ones. 
+The block can be used, to automatically set the access privileges of Moodle users enrolled in the course.
+All events belonging to the series are displayed in the block.
+This way, the instructors get an overview of all recorded lectures as well as planned ones.
 Further, if set up correctly, the instructors are able to restrict the visibility to Moodle groups or prevent access by students at all.
 
 ## Installation
-The Opencast block plugin is available from [GitHub](https://github.com/Opencast-Moodle/moodle-block_opencast/releases) as well as from the [Moodle plugins directory](https://moodle.org/plugins/block_opencast).
+
+The Opencast block plugin can be obtained from the following sources:
+
+- The [GitHub repository](https://github.com/Opencast-Moodle/moodle-block_opencast/releases), which provides the latest releases, source code, Roadmap and current developments.
+
+- The [Moodle plugins directory](https://moodle.org/plugins/block_opencast), offering a convenient "Official" installation package directly within Moodle.
 
 ## Requirements
-* Installed and configured [Opencast API tool](https://github.com/Opencast-Moodle/moodle-tool_opencast)
+
+To use the Opencast Videos block plugin, the following dependency must be installed and properly configured:
+
+- [Opencast API tool (tool_opencast)](https://github.com/Opencast-Moodle/moodle-tool_opencast)
 
 ## Features
-* Upload videos to Opencast
-* Record videos using Opencast studio
-* Overview of recorded and planned videos in the course
-* Overview of all series and videos that a use has access to (independent of a course) ([Global overview](global_overview.md))
-* Attaching transcription files to videos
-* Send process notifications about videos
-* Live status updates of the uploading status and workflow processing states of videos
-* Download processed videos from Opencast  
-* Edit the video in the Opencast editor
-* Edit metadata and delete videos
-* Restrict the visibility of videos to Moodle groups or prevent access by students at all
-* Allow teachers, to start Opencast workflows for videos
-* Linking an existing Opencast series to the course
-* Import videos from other Moodle courses via course reuse, series import or manual video bulk import
-* Report problems to a support team with automatically including technical information
-* In integration with the activity [Opencast Video Provider](https://moodle.org/plugins/mod_opencast):
-    + Provide the series or single videos as activity for students to watch directly in Moodle
-    + Restrict the visibility using the extensive Moodle activity access settings
+
+The Opencast Videos block plugin provides the following key features:
+
+- Upload videos to Opencast, either individually or in batches.
+- Record videos using Opencast studio
+- View an overview of recorded and scheduled videos within a course.
+- Access an overview of all series and videos available to a user, regardless of the course ([Global overview](global_overview.md)).
+- Attach and manage transcription (subtitle) files for videos.
+- Send process notifications about videos.
+- Live status updates of the uploading status and workflow processing states of videos
+- Download processed videos from Opencast
+- Edit the video in the Opencast editor
+- Edit and update metadata of videos and series
+- Delete videos
+- Create new Opencast series from Moodle
+- Linking an existing Opencast series to the course
+- Restrict the visibility of videos to Moodle groups or prevent access by students at all
+- Allow teachers, to start Opencast workflows for videos
+- Import videos from other Moodle courses via course reuse, series import or manual video bulk import
+- Report problems to a support team with automatically including technical information
+- In integration with the activity [Opencast Video Provider](https://moodle.org/plugins/mod_opencast):
+  - Provide the series or single videos as activity for students to watch directly in Moodle
+  - Restrict the visibility using the extensive Moodle activity access settings
+- Perform mass actions in video lists, enabling bulk operations such as metadata updates or deletions.
+- Offer a Workflow Configuration panel for teachers to customize workflow options during video uploads.
 
 ## Configuration
+
 The block has many settings, that allow the administrator, to further specify the features or to turn them off.
 The configuration of the block is split up into six sections:
 
@@ -47,6 +63,7 @@ The configuration of the block is split up into six sections:
 * [Import videos features](import_module_features.md)
 
 ## Capabilities
+
 There are additional capabilities, with which you can control the access to the features of the block.
 Those capabilities are given in an alphabetical order by the following table:
 
@@ -77,10 +94,12 @@ Those capabilities are given in an alphabetical order by the following table:
 | block/opencast:viewusers             | manager                                   | View all Moodle users when trying to change the owner of a video on the global overview page                                                                                                                                                                                                                                                                                           |
 
 ## Logging
+
 The execution of upload jobs are being logged, which can be viewed at *Site administration*->*Reports*->*Logs*.
-View the setting "Site Errors" instead of "All activities" you can view only those upload jobs, which failed.    
+View the setting "Site Errors" instead of "All activities" you can view only those upload jobs, which failed.
 
 ## Placement
+
 This plugin is designed as block and, to be used, it will be initially added to a Moodle course by a teacher. The block shows a quick overview over the videos, which are uploaded in the block, but mainly links to a fullscreen overview page, where the full functionality of the plugin is provided.
 
 If you want to provide the plugin in every course by default without requiring, that the teachers adds it to the course, please have a look at Moodle core's `$CFG->defaultblocks` setting which is set in *config.php* only and which is described on https://github.com/moodle/moodle/blob/master/config-dist.php.
@@ -94,6 +113,7 @@ Please take extra care, that the `editingteacher,manager` list of roles should m
 After adding the Boost nav drawer item, you can also remove the `block/opencast:addinstance` capability from all roles, as adding the block is not really necessary anymore.
 
 ## Export and import settings
+
 If you want to export and import the administrator settings of the block, you can use the [Admin presets](https://moodle.org/plugins/block_admin_presets) block.
 The admin presets block can be added to the frontpage (https://yourmoodlesite.com/?redirect=0). After adding the block, you can select which settings to export or choose a file from which settings should be imported.
 In Moodle 4, this functionality is partly integrated into the core.
