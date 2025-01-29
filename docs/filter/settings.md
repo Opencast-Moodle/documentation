@@ -10,7 +10,11 @@ The plugin provides the following configuration options:
 <ul>
    <li>To determine the correct URL, check which URL is inserted into the text by the repository.</li>
    <li>Typically, only one URL needs to be defined.</li>
-   <li markdown="1">Use the placeholder `\[EPISODEID]` in the URL to indicate where the episode ID should be inserted, e.g., `http://stable.opencast.de/play/[EPISODEID]`.</li>
+   <li>
+      <p markdown="1">
+      Use the placeholder `\[EPISODEID]` in the URL to indicate where the episode ID should be inserted, e.g., `http://stable.opencast.de/play/[EPISODEID]`.
+      </p>
+   </li>
 </ul>
 
 2. **URL to Paella `config.json`:** Specifies an absolute or relative URL to the `config.json` file used by the Paella Player.
@@ -30,8 +34,10 @@ The plugin provides the following configuration options:
    <li>
       It uses the LTI Credentials configured in Opencast API (tool_opencast) plugin.
    </li>
-   <li markdown="1">
+   <li>
+      <p markdown="1">
       **Important Note**: As mentioned in the _Opencast API (tool_opencast)_ plugin [settings](../tool/settings.md), if you plan to use the LTI Authentication feature and have a multi-node Opencast instance, you must add an additional role (`ROLE_UI_EVENTS_EMBEDDING_CODE_VIEW`) to the Opencast API user's roles to ensure proper functionality.
+      </p>
    </li>
 </ul>
 
