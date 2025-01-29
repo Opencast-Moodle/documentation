@@ -13,23 +13,17 @@ All Moodle Opencast plugins are hosted on GitHub under the [Opencast Moodle Plug
 Understanding the development lifecycle of Moodle Opencast plugins is crucial for efficient collaboration.
 The process typically follows these stages:
 
-### **Issue Creation/Selection:**
+### Issue Creation/Selection:
 
 * Development begins with an issue in the relevant GitHub repository of the targeted plugin.
-
 * If you're working on an issue (e.g., bug fix or feature request), ensure a **detailed description** is provided before starting development. If the description is unclear, ask the issue creator for clarification.
-
 * Always use the appropriate issue template (e.g., bug report, feature request).
-
 * Assign the issue to yourself to improve tracking and management.
-
 * For discussions or questions, use GitHub Discussions, the Element Community Chat, or contact the repository manager.
 
-
-### **Development Phase:**
+### Development Phase:
 
 Once an issue is assigned, follow best practices to ensure maintainability and compatibility with other plugins. Key considerations include:
-
 
 * **Opencast API Class Usage:**
 
@@ -78,21 +72,16 @@ A PR is only reviewed if all automated checks pass.
 If your changes affect existing functionality or introduce new features, include appropriate **PHPUnit** or **Behat** tests to ensure stability.
 
 
-### **Creating Pull Requests:**
+### Creating Pull Requests:
 
 Every change must be submitted via a pull request (PR) against the `main` branch of the targeted plugin.
 
-
 * Add relevant **labels** to PRs and issues.
-
 * Assign a reviewer **only when all CI checks pass**.
-
 * Ensure PR descriptions are comprehensive, covering dependencies, test scenarios, and additional context.
-
 * Address reviewer feedback promptly to facilitate merging.
 
-
-### **Developer Group Meetings Participation:**
+### Developer Group Meetings Participation:
 
 The Moodle Opencast community holds a **developer group meeting** every second Friday of the month, alternating with core meetings. Participation is encouraged to stay informed about the latest developments, roadmaps, and to ask questions.
 
