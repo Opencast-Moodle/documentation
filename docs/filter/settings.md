@@ -6,9 +6,10 @@ The plugin provides the following configuration options:
 
 
 - **URL templates for filtering:** Defines the URL patterns that will be replaced with the Opencast player.
-   - To determine the correct URL, check which URL is inserted into the text by the repository.
-   - Typically, only one URL needs to be defined.
-   - Use the placeholder `\[EPISODEID]` in the URL to indicate where the episode ID should be inserted, e.g., `http://stable.opencast.de/play/[EPISODEID]`.
+
+   * To determine the correct URL, check which URL is inserted into the text by the repository.
+   * Typically, only one URL needs to be defined.
+   * Use the placeholder `\[EPISODEID]` in the URL to indicate where the episode ID should be inserted, e.g., `http://stable.opencast.de/play/[EPISODEID]`.
 
 - **URL to Paella `config.json`:** Specifies an absolute or relative URL to the `config.json` file used by the Paella Player.
    - This configuration file can be customized to modify the appearance or behavior of the Paella Player.
