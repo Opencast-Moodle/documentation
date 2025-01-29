@@ -44,6 +44,8 @@ nav:
 
 # Extensions
 markdown_extensions:
+    - admonition
+    - pymdownx.details
     - pymdownx.superfences
     - def_list
     - pymdownx.tasklist:

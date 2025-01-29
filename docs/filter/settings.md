@@ -25,5 +25,5 @@ The plugin provides the following configuration options:
 
    3. **Important Note**: As mentioned in the _Opencast API (tool_opencast)_ plugin [settings](../tool/settings.md), if you plan to use the LTI Authentication feature and have a multi-node Opencast instance, you must add an additional role (`ROLE_UI_EVENTS_EMBEDDING_CODE_VIEW`) to the Opencast API user's roles to ensure proper functionality.
 
-
-**NOTE**: After configuring this plugin, you must activate it in the filters.
+!!! note
+   After configuring this plugin, you must activate it in the filters.
