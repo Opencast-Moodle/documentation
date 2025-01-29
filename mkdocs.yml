@@ -3,20 +3,6 @@ repo_url: https://github.com/Opencast-Moodle/documentation
 # Default theme used is windmill
 theme:
     name: windmill
-    icon:
-        admonition:
-            note: fontawesome/solid/note-sticky
-            abstract: fontawesome/solid/book
-            info: fontawesome/solid/circle-info
-            tip: fontawesome/solid/bullhorn
-            success: fontawesome/solid/check
-            question: fontawesome/solid/circle-question
-            warning: fontawesome/solid/triangle-exclamation
-            failure: fontawesome/solid/bomb
-            danger: fontawesome/solid/skull
-            bug: fontawesome/solid/robot
-            example: fontawesome/solid/flask
-            quote: fontawesome/solid/quote-left
 
 # The directory that contain the source .md files
 docs_dir: 'docs'
