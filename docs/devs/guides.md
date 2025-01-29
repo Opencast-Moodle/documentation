@@ -13,8 +13,7 @@ All Moodle Opencast plugins are hosted on GitHub under the [Opencast Moodle Plug
 Understanding the development lifecycle of Moodle Opencast plugins is crucial for efficient collaboration.
 The process typically follows these stages:
 
-1. **Issue Creation/Selection:**
-
+### **Issue Creation/Selection:**
 
 * Development begins with an issue in the relevant GitHub repository of the targeted plugin.
 
@@ -27,7 +26,7 @@ The process typically follows these stages:
 * For discussions or questions, use GitHub Discussions, the Element Community Chat, or contact the repository manager.
 
 
-2. **Development Phase:**
+### **Development Phase:**
 
 Once an issue is assigned, follow best practices to ensure maintainability and compatibility with other plugins. Key considerations include:
 
@@ -79,7 +78,7 @@ A PR is only reviewed if all automated checks pass.
 If your changes affect existing functionality or introduce new features, include appropriate **PHPUnit** or **Behat** tests to ensure stability.
 
 
-3. **Creating Pull Requests:**
+### **Creating Pull Requests:**
 
 Every change must be submitted via a pull request (PR) against the `main` branch of the targeted plugin.
 
@@ -93,7 +92,7 @@ Every change must be submitted via a pull request (PR) against the `main` branch
 * Address reviewer feedback promptly to facilitate merging.
 
 
-4. **Developer Group Meetings Participation:**
+### **Developer Group Meetings Participation:**
 
 The Moodle Opencast community holds a **developer group meeting** every second Friday of the month, alternating with core meetings. Participation is encouraged to stay informed about the latest developments, roadmaps, and to ask questions.
 
