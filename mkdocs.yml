@@ -44,6 +44,9 @@ nav:
 
 # Extensions
 markdown_extensions:
+    - sane_lists
+    - smarty
+    - codehilite
     - admonition
     - pymdownx.details
     - pymdownx.superfences
