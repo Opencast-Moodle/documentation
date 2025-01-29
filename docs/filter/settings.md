@@ -36,7 +36,7 @@ The plugin provides the following configuration options:
    </li>
    <li>
       <p markdown="1">
-      <strong>Important Note</strong>: As mentioned in the <em>Opencast API (tool_opencast)</em> plugin [settings](../tool/settings.md), if you plan to use the LTI Authentication feature and have a multi-node Opencast instance, you must add an additional role (<code>ROLE_UI_EVENTS_EMBEDDING_CODE_VIEW</code>) to the Opencast API user's roles to ensure proper functionality.
+      <strong>Important Note</strong>: As mentioned in the <em>Opencast API (tool_opencast)</em> plugin <a href="https://moodle.docs.opencast.org/#tool/settings/" data-wm-adjusted="done">settings page</a>, if you plan to use the LTI Authentication feature and have a multi-node Opencast instance, you must add an additional role (<code>ROLE_UI_EVENTS_EMBEDDING_CODE_VIEW</code>) to the Opencast API user's roles to ensure proper functionality.
       </p>
    </li>
 </ul>
