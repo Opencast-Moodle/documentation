@@ -41,3 +41,10 @@ nav:
         - 'Settings': 'filter/settings.md'
     - 'Developer Guide':
         - 'Contribution Guidelines': 'devs/guides.md'
+
+# Extensions
+markdown_extensions:
+    - pymdownx.superfences
+    - def_list
+    - pymdownx.tasklist:
+        custom_checkbox: true
