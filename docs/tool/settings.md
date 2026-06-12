@@ -62,6 +62,32 @@ For LTI configuration details, see [LTI](https://docs.opencast.org/r/16.x/admin/
 
 ![Tool Opencast Settings Configurations](../img/tool/configurations.png)
 
+## JWT Authentication
+
+If you are new to JWT or want to know more about its underlying architecture, step by step configuration, claim mapping, and security requirements, refer to the [Moodle Opencast JWT Authentication Guide](../auth/moodle-opencast-jwt-guid.md). It is highly recommended to read this guidance before configuring the fields below.
+
+### JWT Configurations
+
+- **Enable JWT Authenticahtion**: When enabled, Moodle uses JSON Web Tokens (JWT) to access assets and resources in Opencast.
+
+- **Private Key (full text)**: The complete string of your private cryptographic key (RSA), used by Moodle to sign outbound tokens for Opencast validation.
+
+- **Token lifetime (duration)**: Specifies how long (in seconds) a standard signed token remains valid after generation before expiring.
+
+- **Video proxy token lifetime**: Defines how long a video proxy token remains valid before expiration, specified in seconds. This applies directly to video proxy delivery contexts, such as the Opencast H5P Extensions.
+
+- **Signing algorithm**: Specifies the cryptographic algorithm used to sign the token payload (e.g., RS256).
+
+- **Player iframe URL path**: The specific player web path configuration used to securely embed and display the video iframe with JWT query parameter support.
+
+- **Studio roles**: The specific user role claim injected into the token payload when a user accesses Opencast Studio.
+
+- **Editor roles**: The specific user role claim injected into the token payload when a user accesses the Opencast Editor.
+
+- **Annotation-Tool roles**: The specific user role claim injected into the token payload when a user accesses the Opencast Annotation-Tool.
+
+![JWT Configuration](../img/tool/jwt.png)
+
 ## Maintenance Settings
 
 The maintenance settings section allows you to control access to Opencast during maintenance periods. Options include:
